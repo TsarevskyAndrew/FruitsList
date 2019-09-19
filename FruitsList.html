@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+    <div id="list"></div>
+    
+
+    <script>
+            const fruits = ['Banana', 'Apple', 'Orange', 'Lemon']
+            
+            for(let i = 0; i < fruits.length; i++) {
+               
+                if(fruits[i] === "Apple") {
+                
+                fruits[i] = "Only Apple"
+                
+                }
+            }
+            
+            (function(){
+                
+                let ol = document.createElement('ol');
+                
+                ol.setAttribute('id','proList');
+
+                let t;
+    
+                document.getElementById('list').appendChild(ol);
+                
+                fruits.forEach(renderList);
+
+                function renderList(element, index, arr) {
+                    
+                    let li = document.createElement('li');
+            
+                    ol.appendChild(li);
+            
+                    t = document.createTextNode(element);
+            
+                    li.innerHTML=li.innerHTML + element;
+                }
+            })();
+    </script>
+</body>
+</html>
